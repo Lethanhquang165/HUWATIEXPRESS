@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="size_0">0dp</dimen>
+    <dimen name="size_01">0.1dp</dimen>
+    <dimen name="size_03">0.3dp</dimen>
+    <dimen name="size_1">1dp</dimen>
+    <dimen name="size_2">2dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_5">5dp</dimen>
+    <dimen name="size_6">6dp</dimen>
+    <dimen name="size_7">7dp</dimen>
+    <dimen name="size_10">10dp</dimen>
+    <dimen name="size_15">15dp</dimen>
+    <dimen name="size_18">18dp</dimen>
+    <dimen name="size_20">20dp</dimen>
+    <dimen name="size_21">21dp</dimen>
+    <dimen name="size_30">30dp</dimen>
+    <dimen name="size_40">40dp</dimen>
+    <dimen name="size_41">41dp</dimen>
+    <dimen name="size_45">45dp</dimen>
+    <dimen name="size_52.7">52.7dp</dimen>
+    <dimen name="size_54">54dp</dimen>
+    <dimen name="size_70">70dp</dimen>
+    <dimen name="size_74">74dp</dimen>
+    <dimen name="size_75">75dp</dimen>
+    <dimen name="size_76">76dp</dimen>
+    <dimen name="size_85">85dp</dimen>
+    <dimen name="size_90">90dp</dimen>
+    <dimen name="size_100">100dp</dimen>
+    <dimen name="size_103">103dp</dimen>
+    <dimen name="size_106">106dp</dimen>
+    <dimen name="size_123">123dp</dimen>
+    <dimen name="size_150">150dp</dimen>
+    <dimen name="size_161">161dp</dimen>
+    <dimen name="size_180">180dp</dimen>
+    <dimen name="size_203">203dp</dimen>
+    <dimen name="size_211">211dp</dimen>
+    <dimen name="size_230">230dp</dimen>
+    <dimen name="size_250">250dp</dimen>
+    <dimen name="size_291">291dp</dimen>
+    <dimen name="size_292">292dp</dimen>
+    <dimen name="size_300">300dp</dimen>
+    <dimen name="size_320">320dp</dimen>
+    <dimen name="size_365">365dp</dimen>
+    <dimen name="size_395">365dp</dimen>
+    <dimen name="size_597">597dp</dimen>
+    <dimen name="size_600">600dp</dimen>
+
+    <dimen name="size_text_12">12sp</dimen>
+    <dimen name="size_text_15">15sp</dimen>
+    <dimen name="size_text_18">18sp</dimen>
+    <dimen name="size_text_20">20sp</dimen>
+    <dimen name="size_text_21.6">21.6sp</dimen>
+    <dimen name="size_text_25">25sp</dimen>
+    <dimen name="size_text_30">30sp</dimen>
+    <dimen name="size_text_35">35sp</dimen>
+    <dimen name="size_text_35.2">35.2sp</dimen>
+    <dimen name="size_text_32.7">32.7sp</dimen>
+    <dimen name="size_text_39.6">39.6sp</dimen>
+    <dimen name="size_text_40">40sp</dimen>
+    <dimen name="size_text_45">45sp</dimen>
+    <dimen name="size_text_56.8">56.8sp</dimen>
+
+</resources>
+
