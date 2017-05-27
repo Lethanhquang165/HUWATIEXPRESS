@@ -1,18 +1,37 @@
 <resources>
     <string name="app_name">HUWATIEXPRESSApplication</string>
 
-    <!--Facebook-->
+    <!--Facebook Google-->
     <string name="facebook_app_id">268472840291683</string>
     <string name="fb_login_protocol_scheme">fb268472840291683</string>
 
-    <!--Login Activity-->
+    <!--Start Login & Register Activity-->
+    <string name="FullName">Fullname</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="remember_me">Remember me</string>
     <string name="btn_login">Login</string>
-    <string name="btn_create_an_account">Create an account!</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_create_an_account">Create an account?</string>
+    <string name="btn_already_have_an_account">Already have an account?</string>
+    <!--End Login & Register Activity-->
 
-    <!--Register Activity-->
-    <string name="FullName">FullName</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Start Menu Label-->
+    <string name="menu_ticket">Ticket</string>
+    <string name="menu_check_ticket">Check Ticket</string>
+    <string name="menu_schedule">Schedule</string>
+    <string name="menu_driver">Driver</string>
+    <string name="menu_car_information">Car Information</string>
+    <string name="menu_passenger_information">Passenger information</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_account_information">Account Information</string>
+    <string name="menu_change_password">Change Password</string>
+    <string name="menu_about_us">About Us</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_contact_us">Contact Us</string>
+    <!--End Menu Label-->
+
 
 </resources>
