@@ -4,12 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.LoginActivity">
+    android:layout_marginTop="8dp"
+    app:layout_constraintTop_toTopOf="@+id/button2"
+    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.Login.LoginActivity"
+    tools:layout_editor_absoluteX="0dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout" />
+
+    <!--Facebook Google-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintLeft_toLeftOf="@+id/tilUsername"
+        app:layout_constraintRight_toRightOf="@+id/tilUsername">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/vector_facebook" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/vector_google"/>
+    </LinearLayout>
+
+    <!--Username-->
+    <View
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/com_facebook_button_background_color_disabled"
+        app:layout_constraintBottom_toTopOf="@+id/tilUsername"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/tilUsername"
+        app:layout_constraintRight_toRightOf="@+id/tilUsername" />
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="@dimen/inputText_marginTop"
         app:layout_constraintBottom_toTopOf="@+id/tilPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/tilPassword"
@@ -19,23 +70,23 @@
             android:id="@+id/edtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="8dp"
+            android:hint="@string/username"
             android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
-            android:singleLine="true" />
+            android:selectAllOnFocus="true" />
     </android.support.design.widget.TextInputLayout>
 
+    <!--Password-->
     <android.support.design.widget.TextInputLayout
 
         android:id="@+id/tilPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="@dimen/inputText_marginLeft"
+        android:layout_marginRight="@dimen/inputText_marginRight"
+        android:layout_marginTop="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,49 +96,62 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:drawableLeft="@drawable/ic_lock_open_black_24dp"
+            android:drawablePadding="8dp"
+            android:hint="@string/password"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true"
-            android:singleLine="true" />
+            android:selectAllOnFocus="true" />
     </android.support.design.widget.TextInputLayout>
 
     <View
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="495dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="-235dp"
         android:background="#E6EEF9"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
+    <!--Remember Me-->
     <CheckBox
         android:id="@+id/cbRemember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
         android:layout_marginTop="16dp"
-        android:text="Remember me"
+        android:text="@string/remember_me"
         app:layout_constraintLeft_toLeftOf="@+id/tilPassword"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
+    <!--Login-->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_height="@dimen/btn_height"
         android:layout_marginTop="16dp"
-        android:background="#2A3C50"
+        android:background="@drawable/bg_button_login"
         android:inputType="text"
-        android:text="Login"
+        android:text="@string/btn_login"
         android:textColor="@android:color/white"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/tilPassword"
         app:layout_constraintRight_toRightOf="@+id/tilPassword"
         app:layout_constraintTop_toBottomOf="@+id/cbRemember" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="text"
+        android:text="@string/btn_create_an_account"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@+id/btnLogin"
+        app:layout_constraintRight_toRightOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 </android.support.constraint.ConstraintLayout>

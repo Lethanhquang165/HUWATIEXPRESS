@@ -62,5 +62,18 @@
     <dimen name="size_text_45">45sp</dimen>
     <dimen name="size_text_56.8">56.8sp</dimen>
 
+    <!--Input Text-->
+    <dimen name="inputText_marginTop">24dp</dimen>
+    <dimen name="inputText_marginLeft">48dp</dimen>
+    <dimen name="inputText_marginRight">48dp</dimen>
+
+    <!--View-->
+    <dimen name="view_marginTop">24dp</dimen>
+
+    <!--Button-->
+    <dimen name="btn_height">36dp</dimen>
+    <dimen name="btn_left_right_padding">16dp</dimen>
+    <dimen name="btn_margin">8dp</dimen>
+    <dimen name="btn_corner_radius">2dp</dimen>
 </resources>
 

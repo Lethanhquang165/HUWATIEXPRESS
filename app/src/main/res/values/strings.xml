@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HUWATIEXPRESSApplication</string>
+
+    <!--Facebook-->
+    <string name="facebook_app_id">268472840291683</string>
+    <string name="fb_login_protocol_scheme">fb268472840291683</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_create_an_account">Create an account!</string>
+
 </resources>

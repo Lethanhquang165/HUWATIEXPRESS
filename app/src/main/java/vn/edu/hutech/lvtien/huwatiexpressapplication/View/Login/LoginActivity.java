@@ -1,4 +1,4 @@
-package vn.edu.hutech.lvtien.huwatiexpressapplication.View;
+package vn.edu.hutech.lvtien.huwatiexpressapplication.View.Login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
