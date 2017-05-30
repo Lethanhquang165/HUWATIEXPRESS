@@ -13,7 +13,7 @@
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_nav_schedule"
             android:title="@string/menu_schedule" />
-    </group>
+
 
     <item android:title="@string/menu_driver">
         <menu>
@@ -22,7 +22,7 @@
                 android:icon="@drawable/ic_nav_car"
                 android:title="@string/menu_car_information" />
             <item
-                android:id="@+id/nav_passenget_information"
+                android:id="@+id/nav_passenger_information"
                 android:icon="@drawable/ic_nav_passenger_information"
                 android:title="@string/menu_passenger_information" />
         </menu>
@@ -57,4 +57,5 @@
                 android:title="@string/menu_about_us" />
         </menu>
     </item>
+    </group>
 </menu>

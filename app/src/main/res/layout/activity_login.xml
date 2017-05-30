@@ -52,7 +52,6 @@
         android:layout_marginBottom="8dp"
         android:background="@color/com_facebook_button_background_color_disabled"
         app:layout_constraintBottom_toTopOf="@+id/tilUsername"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/tilUsername"
         app:layout_constraintRight_toRightOf="@+id/tilUsername" />
 
@@ -62,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/inputText_marginTop"
         app:layout_constraintBottom_toTopOf="@+id/tilPassword"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/tilPassword"
         app:layout_constraintRight_toRightOf="@+id/tilPassword">
 

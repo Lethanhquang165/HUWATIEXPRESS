@@ -1,0 +1,134 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.Fragment.TicketFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_marginLeft"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:background="@drawable/bg_panel_ticket"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441">
+
+        <!--Title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_panel_search_ticket">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableLeft="@drawable/ic_search_white"
+                android:drawablePadding="@dimen/inputText_drawable_padding"
+                android:paddingBottom="@dimen/txt_padding_bottom"
+                android:paddingTop="@dimen/txt_padding_top"
+                android:text="@string/ticket_search_trip"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ticket_start_point" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ticket_stop_point" />
+        </android.support.design.widget.TextInputLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:inputType="date"
+            android:text="Ngày đi: " />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:inputType="date"
+            android:text="Ngày về: " />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/segmented2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/layout_marginBottom"
+                android:layout_marginLeft="@dimen/layout_marginLeft"
+                android:layout_marginRight="@dimen/margin_16"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/btnNext"
+                app:layout_constraintTop_toTopOf="parent"
+                app:sc_border_width="@dimen/segmented_border_width"
+                app:sc_corner_radius="@dimen/segmented_corner_radius">
+
+                <RadioButton
+                    android:id="@+id/btnOneWay"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/ticket_one_way"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/btnRoundTrip"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/ticket_round_trip"
+                    android:textSize="18sp" />
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <ImageView
+                android:id="@+id/btnNext"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginRight="@dimen/layout_marginRight"
+                android:src="@drawable/ic_next_pressed"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

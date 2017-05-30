@@ -4,5 +4,33 @@
     <color name="colorPrimaryDark">#002171</color>
     <color name="colorAccent">#2979FF</color>
 
+    <color name="white">#FFFFFF</color>
     <color name="colorView">#E6EEF9</color>
+
+    <color name="text_color_user_name">#3c3a38</color>
+    <color name="color_orange_primary">#f58220</color>
+    <color name="color_orange_alpha_03">#4Df58220</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_white_alpha_05">#80ffffff</color>
+    <color name="color_white_alpha_02">#33ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_text_orange">#f97a1d</color>
+    <color name="color_text_black">#3c3a38</color>
+    <color name="color_white_alpha_06">#99ffffff</color>
+    <color name="color_moderate_green">#84cd54</color>
+    <color name="color_bright_red">#e65030</color>
+    <color name="color_gray">#828D8E</color>
+    <color name="color_white_gray">#99FFFFFF</color>
+    <color name="color_blue">#5AA2D3</color>
+    <color name="color_yellow">#FAB640</color>
+    <color name="color_white_alpha_0_percent">#00ffffff</color>
+    <color name="color_white_alpha_60_percent">#99ffffff</color>
+    <color name="color_bright_red_alpha_08">#CCe65030</color>
+    <color name="color_green">#177a6e</color>
+    <color name="color_green_alpha_08">#CC75e2f6</color>
+    <color name="color_blue_alpha_05">#9945c4db</color>
+    <color name="color_blue_alpha_02">#3345c4db</color>
+    <color name="color_orange_alpha_05">#99ffa151</color>
+    <color name="color_orange_alpha_02">#33ffa151</color>
+    <color name="color_dark_gray">#4d4d4d</color>
 </resources>

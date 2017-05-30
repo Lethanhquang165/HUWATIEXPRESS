@@ -53,7 +53,8 @@
         <!--End Register Activity-->
 
         <!--Start Main Activity-->
-        <activity android:name=".View.MainActivity">
+        <activity android:name=".View.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -33,5 +33,17 @@
     <string name="menu_contact_us">Contact Us</string>
     <!--End Menu Label-->
 
+    <!--Start Navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--End Navigation-->
+
+    <!--Start Ticket Layout-->
+    <string name="ticket_search_trip">Search Trip</string>
+    <string name="ticket_start_point">Start point</string>
+    <string name="ticket_stop_point">Stop point</string>
+    <string name="ticket_one_way">One way</string>
+    <string name="ticket_round_trip">Round trip</string>
+    <!--End Ticket Layout-->
 
 </resources>

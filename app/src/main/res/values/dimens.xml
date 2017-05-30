@@ -62,6 +62,12 @@
     <dimen name="size_text_45">45sp</dimen>
     <dimen name="size_text_56.8">56.8sp</dimen>
 
+    <dimen name="layout_marginLeft">8dp</dimen>
+    <dimen name="layout_marginRight">8dp</dimen>
+    <dimen name="layout_marginTop">8dp</dimen>
+    <dimen name="layout_marginBottom">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+
     <!--Input Text-->
     <dimen name="inputText_marginTop">16dp</dimen>
     <dimen name="inputText_marginLeft">48dp</dimen>
@@ -77,5 +83,12 @@
     <dimen name="btn_margin">8dp</dimen>
     <dimen name="btn_corner_radius">2dp</dimen>
 
+    <!--TextView-->
+    <dimen name="txt_padding_top">16dp</dimen>
+    <dimen name="txt_padding_bottom">8dp</dimen>
+
+    <!--Segmented-->
+    <dimen name="segmented_border_width">3dp</dimen>
+    <dimen name="segmented_corner_radius">8dp</dimen>
 </resources>
 
