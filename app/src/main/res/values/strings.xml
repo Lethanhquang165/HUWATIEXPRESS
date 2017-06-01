@@ -46,4 +46,18 @@
     <string name="ticket_round_trip">Round trip</string>
     <!--End Ticket Layout-->
 
+    <!--Start Trips Layout-->
+    <string name="trips_text_prev"><![CDATA[<]]></string>
+    <string name="trips_text_date">01/06/2017</string>
+    <string name="trips_text_next"><![CDATA[>]]></string>
+    <!--End Trips Layout-->
+
+    <!--Start Item Ticket List-->
+    <string name="item_ticket_car_name">Phúc Thuận Thảo</string>
+    <string name="item_ticket_car_type">Loại xe: Giường nằm</string>
+    <string name="item_ticket_round">Tuy Hòa - Sài Gòn</string>
+    <string name="item_ticket_time">18:30 - 05:00</string>
+    <string name="item_ticket_seat">2 Ghế Trống</string>
+    <string name="item_ticket_price">225.000đ</string>
+    <!--End Item Ticket List-->
 </resources>

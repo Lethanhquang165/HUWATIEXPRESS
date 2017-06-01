@@ -13,16 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-        <!--Start Login Activity-->
+        <!-- Start Login Activity -->
         <activity
             android:name=".View.Login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <!-- End Login Activity -->
 
-        </activity>
-        <!--End Login Activity-->
 
-        <!--Start Activity Facebook -->
+        <!-- Start Activity Facebook -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -39,21 +37,24 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <!--End Activity Facebook -->
+        <!-- End Activity Facebook -->
+
 
         <!-- Meta data of Facebook -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <!--Start Register Activity-->
+        <!-- Start Register Activity -->
         <activity
             android:name=".View.Register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!--End Register Activity-->
+        <!-- End Register Activity -->
 
-        <!--Start Main Activity-->
-        <activity android:name=".View.MainActivity"
+
+        <!-- Start Main Activity -->
+        <activity
+            android:name=".View.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +62,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--End Main Activity-->
+        <!-- End Main Activity -->
+        <activity android:name=".View.Activity.TripsActivity"></activity>
     </application>
 
 </manifest>
