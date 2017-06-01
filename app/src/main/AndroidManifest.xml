@@ -16,7 +16,7 @@
         <!-- Start Login Activity -->
         <activity
             android:name=".View.Login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- End Login Activity -->
 
 
@@ -63,7 +63,8 @@
             </intent-filter>
         </activity>
         <!-- End Main Activity -->
-        <activity android:name=".View.Activity.TripsActivity"></activity>
+        <activity android:name=".View.Activity.TripsActivity" />
+        <activity android:name=".View.Activity.CustomerInformationActivity"></activity>
     </application>
 
 </manifest>

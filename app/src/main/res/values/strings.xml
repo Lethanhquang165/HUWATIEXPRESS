@@ -60,4 +60,11 @@
     <string name="item_ticket_seat">2 Ghế Trống</string>
     <string name="item_ticket_price">225.000đ</string>
     <!--End Item Ticket List-->
+
+    <!--Start Customer Information-->
+    <string name="customer_information_full_name">Full Name *</string>
+    <string name="customer_information_email">Email</string>
+    <string name="customer_information_phone">Phone *</string>
+    <string name="customer_information_identity_card">Identity Card *</string>
+    <!--End Customer Information-->
 </resources>
