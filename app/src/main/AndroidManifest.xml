@@ -64,7 +64,9 @@
         </activity>
         <!-- End Main Activity -->
         <activity android:name=".View.Activity.TripsActivity" />
-        <activity android:name=".View.Activity.CustomerInformationActivity"></activity>
+        <activity android:name=".View.Activity.CustomerInformationActivity" />
+        <activity android:name=".View.Activity.BookingInformationActivity"></activity>
+        tools:replace="android:icon"
     </application>
 
 </manifest>

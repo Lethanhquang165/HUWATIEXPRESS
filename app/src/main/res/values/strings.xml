@@ -62,9 +62,26 @@
     <!--End Item Ticket List-->
 
     <!--Start Customer Information-->
-    <string name="customer_information_full_name">Full Name *</string>
+    <string name="customer_information_full_name">Fullname *</string>
     <string name="customer_information_email">Email</string>
     <string name="customer_information_phone">Phone *</string>
     <string name="customer_information_identity_card">Identity Card *</string>
     <!--End Customer Information-->
+
+    <!--Start Booking Information-->
+    <string name="booking_information_thongtinkhachhang">Customer Information</string>
+    <string name="booking_information_hoten">Họ tên</string>
+    <string name="booking_information_email">Email</string>
+    <string name="booking_information_sdt">So dien thoai</string>
+    <string name="booking_information_cmnd">CMND</string>
+    <string name="booking_information_thongtinve">Thông tin vé</string>
+    <string name="booking_information_trip">Tuyến</string>
+    <string name="booking_information_round">Chuyến</string>
+    <string name="booking_information_startday">Ngày đi</string>
+    <string name="booking_information_seat">Số ghế</string>
+    <string name="booking_information_company">Nhà xe</string>
+    <string name="booking_information_cartype">Loại xe</string>
+    <string name="booking_information_licenseplates">Biển số xe</string>
+    <!--End Booking Information-->
 </resources>
+

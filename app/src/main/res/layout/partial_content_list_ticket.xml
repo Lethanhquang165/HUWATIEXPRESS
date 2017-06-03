@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:rowCount="4">
+
+        <!--Tuyen-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_trip" />
+
+        <TextView
+            android:id="@+id/txtTrip"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="Tuy Hòa - Sài Gòn" />
+
+        <!--Chuyen-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_round" />
+
+        <TextView
+            android:id="@+id/txtRound"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="18:00 - 6:00" />
+
+        <!--Ngay di-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_startday" />
+
+        <TextView
+            android:id="@+id/txtStartDay"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="28/06/1994" />
+
+        <!--So ghe-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_seat" />
+
+        <TextView
+            android:id="@+id/txtSeat"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="A2 - A3 - A4" />
+
+        <!--Nha xe-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_company" />
+
+        <TextView
+            android:id="@+id/txtCompany"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="Phúc Thuận Thảo" />
+
+        <!--Loai xe-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_cartype" />
+
+        <TextView
+            android:id="@+id/txtCarType"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="Giường nằm" />
+
+        <!--Bien so xe-->
+        <TextView
+            style="@style/textView_bookingInformation_subItem"
+            android:text="@string/booking_information_licenseplates" />
+
+        <TextView
+            android:id="@+id/txtLicensePlates"
+            style="@style/textView_bookingInformation_subTitle"
+            android:text="78C1-18621" />
+
+
+    </GridLayout>
+</LinearLayout>

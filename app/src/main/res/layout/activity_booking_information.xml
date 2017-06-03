@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.Activity.BookingInformationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_marginLeft"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/booking_information_thongtinkhachhang"
+            android:textSize="@dimen/txt_size_text_title" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:rowCount="4">
+
+            <!--Name-->
+            <TextView
+                style="@style/textView_bookingInformation_subItem"
+                android:text="@string/booking_information_hoten" />
+
+            <TextView
+                android:id="@+id/txtName"
+                style="@style/textView_bookingInformation_subTitle"
+                android:text="Lê Văn Tiến" />
+
+            <!--email-->
+            <TextView
+                style="@style/textView_bookingInformation_subItem"
+                android:text="@string/booking_information_email" />
+
+            <TextView
+                android:id="@+id/txtEmail"
+                style="@style/textView_bookingInformation_subTitle"
+                android:text="L.vantien286@gmail.com" />
+
+            <!--phone number-->
+            <TextView
+                style="@style/textView_bookingInformation_subItem"
+                android:text="@string/booking_information_sdt" />
+
+            <TextView
+                android:id="@+id/txtPhone"
+                style="@style/textView_bookingInformation_subTitle"
+                android:text="0989112644" />
+
+            <!--identity card-->
+            <TextView
+                style="@style/textView_bookingInformation_subItem"
+                android:text="@string/booking_information_cmnd" />
+
+            <TextView
+                android:id="@+id/txtIdentityCard"
+                style="@style/textView_bookingInformation_subTitle"
+                android:text="1234567890" />
+
+        </GridLayout>
+
+        <com.andexert.expandablelayout.library.ExpandableLayoutListView
+            android:id="@+id/lvTicket"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
