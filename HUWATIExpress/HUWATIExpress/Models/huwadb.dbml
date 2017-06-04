@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HUWA" Class="huwadbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-LEOANDRES\LEOANDRES;Initial Catalog=HUWA;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HUWAConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-LEOANDRES\LEOANDRES;Initial Catalog=HUWA;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HUWAConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,10 +36,28 @@
       <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Bus_Ticket" Member="Tickets" ThisKey="Bus_Id" OtherKey="Bus_Id" Type="Ticket" />
-      <Association Name="Company_Bus" Member="Company" ThisKey="Company_Id" OtherKey="Company_Id" Type="Company" IsForeignKey="true" />
       <Association Name="Bus_Type_Bus" Member="Bus_Type" ThisKey="Bus_Type_Id" OtherKey="Bus_Type_Id" Type="Bus_Type" IsForeignKey="true" />
+      <Association Name="Company_Bus" Member="Company" ThisKey="Company_Id" OtherKey="Company_Id" Type="Company" IsForeignKey="true" />
       <Association Name="Driver_Bus" Member="Driver" ThisKey="Main_Driver_Id" OtherKey="Driver_Id" Type="Driver" IsForeignKey="true" />
       <Association Name="Driver_Bus1" Member="Driver1" ThisKey="Sub_Driver_Id" OtherKey="Driver_Id" Type="Driver" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bus_Stop" Member="Bus_Stops">
+    <Type Name="Bus_Stop">
+      <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Start_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Def_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Bus_Stop_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Station_Bus_Stop" Member="Station" ThisKey="Start_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
+      <Association Name="Station_Bus_Stop1" Member="Station1" ThisKey="Def_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
+      <Association Name="Station_Bus_Stop2" Member="Station2" ThisKey="Bus_Stop_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bus_Type" Member="Bus_Types">
+    <Type Name="Bus_Type">
+      <Column Name="Bus_Type_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Bus_Type_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Bus_Type_Bus" Member="Bus" ThisKey="Bus_Type_Id" OtherKey="Bus_Type_Id" Type="Bus" />
     </Type>
   </Table>
   <Table Name="dbo.Company" Member="Companies">
@@ -56,25 +74,6 @@
       <Association Name="Company_Driver" Member="Drivers" ThisKey="Company_Id" OtherKey="Company_Id" Type="Driver" />
     </Type>
   </Table>
-  <Table Name="dbo.Bus_Stop" Member="Bus_Stops">
-    <Type Name="Bus_Stop">
-      <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Start_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Def_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Bus_Stop_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Station_Bus_Stop" Member="Station" ThisKey="Start_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Station_Bus_Stop1" Member="Station1" ThisKey="Def_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Station_Bus_Stop2" Member="Station2" ThisKey="Bus_Stop_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Trip_Bus_Stop" Member="Trip" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Trip" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Bus_Type" Member="Bus_Types">
-    <Type Name="Bus_Type">
-      <Column Name="Bus_Type_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Bus_Type_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_Type_Bus" Member="Bus" ThisKey="Bus_Type_Id" OtherKey="Bus_Type_Id" Type="Bus" />
-    </Type>
-  </Table>
   <Table Name="dbo.Customer" Member="Customers">
     <Type Name="Customer">
       <Column Name="Customer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -86,14 +85,6 @@
       <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Customer_Ticket" Member="Tickets" ThisKey="Customer_Id" OtherKey="Customer_Id" Type="Ticket" />
       <Association Name="Account_Customer" Member="Account" ThisKey="Account_Id" OtherKey="Account_Id" Type="Account" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Role" Member="Roles">
-    <Type Name="Role">
-      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Role_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Role_Admin" Member="Admins" ThisKey="Role_Id" OtherKey="Role_Id" Type="Admin" />
-      <Association Name="Role_Driver" Member="Drivers" ThisKey="Role_Id" OtherKey="Role_Id" Type="Driver" />
     </Type>
   </Table>
   <Table Name="dbo.Driver" Member="Drivers">
@@ -114,6 +105,14 @@
       <Association Name="Company_Driver" Member="Company" ThisKey="Company_Id" OtherKey="Company_Id" Type="Company" IsForeignKey="true" />
       <Association Name="Role_Driver" Member="Role" ThisKey="Role_Id" OtherKey="Role_Id" Type="Role" IsForeignKey="true" />
       <Association Name="Salary_Driver" Member="Salary" ThisKey="Salary_Id" OtherKey="Salary_Id" Type="Salary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Role_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_Admin" Member="Admins" ThisKey="Role_Id" OtherKey="Role_Id" Type="Admin" />
+      <Association Name="Role_Driver" Member="Drivers" ThisKey="Role_Id" OtherKey="Role_Id" Type="Driver" />
     </Type>
   </Table>
   <Table Name="dbo.Route" Member="Routes">
@@ -152,7 +151,7 @@
   <Table Name="dbo.Station" Member="Stations">
     <Type Name="Station">
       <Column Name="Station_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Station_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Station_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Region" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="City" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
@@ -169,12 +168,11 @@
       <Column Name="Seat_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Customer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Customer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Unit_Price" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
       <Association Name="Bus_Ticket" Member="Bus" ThisKey="Bus_Id" OtherKey="Bus_Id" Type="Bus" IsForeignKey="true" />
       <Association Name="Customer_Ticket" Member="Customer" ThisKey="Customer_Id" OtherKey="Customer_Id" Type="Customer" IsForeignKey="true" />
       <Association Name="Seat_Ticket" Member="Seat" ThisKey="Seat_Id" OtherKey="Seat_Id" Type="Seat" IsForeignKey="true" />
-      <Association Name="Trip_Ticket" Member="Trip" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Trip" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Trip" Member="Trips">
@@ -184,8 +182,6 @@
       <Column Name="End_Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Trip_Bus_Stop" Member="Bus_Stops" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Bus_Stop" />
-      <Association Name="Trip_Ticket" Member="Tickets" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Ticket" />
       <Association Name="Route_Trip" Member="Route" ThisKey="Route_Id" OtherKey="Route_Id" Type="Route" IsForeignKey="true" />
     </Type>
   </Table>
