@@ -62,11 +62,16 @@
     <dimen name="size_text_45">45sp</dimen>
     <dimen name="size_text_56.8">56.8sp</dimen>
 
+    <!--Layout-->
     <dimen name="layout_marginLeft">8dp</dimen>
     <dimen name="layout_marginRight">8dp</dimen>
     <dimen name="layout_marginTop">8dp</dimen>
     <dimen name="layout_marginBottom">8dp</dimen>
     <dimen name="margin_16">16dp</dimen>
+
+    <!--Text View-->
+    <dimen name="textView_paddingTop">16dp</dimen>
+    <dimen name="textView_paddingBottom">8dp</dimen>
 
     <!--Input Text-->
     <dimen name="inputText_paddingTop">24dp</dimen>
