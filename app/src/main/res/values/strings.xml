@@ -42,8 +42,8 @@
     <string name="ticket_search_trip">Search Trip</string>
     <string name="ticket_start_point">Start point</string>
     <string name="ticket_stop_point">Stop point</string>
-    <string name="ticket_one_way">One way</string>
-    <string name="ticket_round_trip">Round trip</string>
+    <string name="ticket_one_way">Single</string>
+    <string name="ticket_return">Return</string>
     <!--End Ticket Layout-->
 
     <!--Start Trips Layout-->

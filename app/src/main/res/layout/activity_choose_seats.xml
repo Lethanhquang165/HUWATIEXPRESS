@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.Activity.ChooseSeatsActivity">
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/segmented2"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="@dimen/layout_marginLeft"
+        android:layout_marginRight="@dimen/layout_marginRight"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sc_border_width="@dimen/segmented_border_width"
+        app:sc_corner_radius="@dimen/segmented_corner_radius">
+
+        <RadioButton
+            android:id="@+id/btnOneWay"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Tầng dưới"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/btnRoundTrip"
+            style="@style/RadioButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Tầng trên"
+            android:textSize="18sp" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+    <ImageView
+        android:id="@+id/btnNext"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="@dimen/layout_marginBottom"
+        android:src="@drawable/ic_next_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
