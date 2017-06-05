@@ -51,6 +51,7 @@
       <Association Name="Station_Bus_Stop" Member="Station" ThisKey="Start_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
       <Association Name="Station_Bus_Stop1" Member="Station1" ThisKey="Def_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
       <Association Name="Station_Bus_Stop2" Member="Station2" ThisKey="Bus_Stop_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
+      <Association Name="Trip_Bus_Stop" Member="Trip" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Trip" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Bus_Type" Member="Bus_Types">
@@ -115,14 +116,6 @@
       <Association Name="Role_Driver" Member="Drivers" ThisKey="Role_Id" OtherKey="Role_Id" Type="Driver" />
     </Type>
   </Table>
-  <Table Name="dbo.Route" Member="Routes">
-    <Type Name="Route">
-      <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Photo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="Route_Trip" Member="Trips" ThisKey="Route_Id" OtherKey="Route_Id" Type="Trip" />
-    </Type>
-  </Table>
   <Table Name="dbo.Salary" Member="Salaries">
     <Type Name="Salary">
       <Column Name="Salary_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -182,7 +175,16 @@
       <Column Name="End_Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Trip_Bus_Stop" Member="Bus_Stops" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Bus_Stop" />
       <Association Name="Route_Trip" Member="Route" ThisKey="Route_Id" OtherKey="Route_Id" Type="Route" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Route" Member="Routes">
+    <Type Name="Route">
+      <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Route_Trip" Member="Trips" ThisKey="Route_Id" OtherKey="Route_Id" Type="Trip" />
     </Type>
   </Table>
 </Database>

@@ -57,9 +57,6 @@ namespace HUWATIExpress.Models
     partial void InsertRole(Role instance);
     partial void UpdateRole(Role instance);
     partial void DeleteRole(Role instance);
-    partial void InsertRoute(Route instance);
-    partial void UpdateRoute(Route instance);
-    partial void DeleteRoute(Route instance);
     partial void InsertSalary(Salary instance);
     partial void UpdateSalary(Salary instance);
     partial void DeleteSalary(Salary instance);
@@ -78,6 +75,9 @@ namespace HUWATIExpress.Models
     partial void InsertTrip(Trip instance);
     partial void UpdateTrip(Trip instance);
     partial void DeleteTrip(Trip instance);
+    partial void InsertRoute(Route instance);
+    partial void UpdateRoute(Route instance);
+    partial void DeleteRoute(Route instance);
     #endregion
 		
 		public huwadbDataContext() : 
@@ -182,14 +182,6 @@ namespace HUWATIExpress.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Route> Routes
-		{
-			get
-			{
-				return this.GetTable<Route>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Salary> Salaries
 		{
 			get
@@ -235,6 +227,14 @@ namespace HUWATIExpress.Models
 			get
 			{
 				return this.GetTable<Trip>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Route> Routes
+		{
+			get
+			{
+				return this.GetTable<Route>();
 			}
 		}
 	}
@@ -1209,24 +1209,28 @@ namespace HUWATIExpress.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bus_Stop")]
-	public partial class Bus_Stop : INotifyPropertyChanging, INotifyPropertyChanged
+    [Serializable]
+    [DataContract (IsReference = true)]
+    public partial class Bus_Stop : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Trip_Id;
-		
-		private int _Start_Station_Id;
-		
-		private int _Def_Station_Id;
-		
-		private int _Bus_Stop_Id;
-		
-		private EntityRef<Station> _Station;
-		
-		private EntityRef<Station> _Station1;
-		
-		private EntityRef<Station> _Station2;
+
+        private int _Trip_Id;
+
+        private int _Start_Station_Id;
+
+        private int _Def_Station_Id;
+
+        private int _Bus_Stop_Id;
+
+        private EntityRef<Station> _Station;
+
+        private EntityRef<Station> _Station1;
+
+        private EntityRef<Station> _Station2;
+
+        private EntityRef<Trip> _Trip;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1247,6 +1251,7 @@ namespace HUWATIExpress.Models
 			this._Station = default(EntityRef<Station>);
 			this._Station1 = default(EntityRef<Station>);
 			this._Station2 = default(EntityRef<Station>);
+			this._Trip = default(EntityRef<Trip>);
 			OnCreated();
 		}
 		
@@ -1261,6 +1266,10 @@ namespace HUWATIExpress.Models
 			{
 				if ((this._Trip_Id != value))
 				{
+					if (this._Trip.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnTrip_IdChanging(value);
 					this.SendPropertyChanging();
 					this._Trip_Id = value;
@@ -1440,6 +1449,40 @@ namespace HUWATIExpress.Models
 						this._Bus_Stop_Id = default(int);
 					}
 					this.SendPropertyChanged("Station2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Trip_Bus_Stop", Storage="_Trip", ThisKey="Trip_Id", OtherKey="Trip_Id", IsForeignKey=true)]
+		public Trip Trip
+		{
+			get
+			{
+				return this._Trip.Entity;
+			}
+			set
+			{
+				Trip previousValue = this._Trip.Entity;
+				if (((previousValue != value) 
+							|| (this._Trip.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Trip.Entity = null;
+						previousValue.Bus_Stops.Remove(this);
+					}
+					this._Trip.Entity = value;
+					if ((value != null))
+					{
+						value.Bus_Stops.Add(this);
+						this._Trip_Id = value.Trip_Id;
+					}
+					else
+					{
+						this._Trip_Id = default(int);
+					}
+					this.SendPropertyChanged("Trip");
 				}
 			}
 		}
@@ -2780,149 +2823,6 @@ namespace HUWATIExpress.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Route")]
-    [DataContract(IsReference = true)]
-    public partial class Route : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-
-        [DataMember]
-        private int _Route_Id;
-
-        [DataMember]
-        private string _Description;
-
-        [DataMember]
-        private string _Photo;
-
-        [DataMember]
-        private EntitySet<Trip> _Trips;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRoute_IdChanging(int value);
-    partial void OnRoute_IdChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnPhotoChanging(string value);
-    partial void OnPhotoChanged();
-    #endregion
-		
-		public Route()
-		{
-			this._Trips = new EntitySet<Trip>(new Action<Trip>(this.attach_Trips), new Action<Trip>(this.detach_Trips));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Route_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Route_Id
-		{
-			get
-			{
-				return this._Route_Id;
-			}
-			set
-			{
-				if ((this._Route_Id != value))
-				{
-					this.OnRoute_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Route_Id = value;
-					this.SendPropertyChanged("Route_Id");
-					this.OnRoute_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Photo
-		{
-			get
-			{
-				return this._Photo;
-			}
-			set
-			{
-				if ((this._Photo != value))
-				{
-					this.OnPhotoChanging(value);
-					this.SendPropertyChanging();
-					this._Photo = value;
-					this.SendPropertyChanged("Photo");
-					this.OnPhotoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Trip", Storage="_Trips", ThisKey="Route_Id", OtherKey="Route_Id")]
-		public EntitySet<Trip> Trips
-		{
-			get
-			{
-				return this._Trips;
-			}
-			set
-			{
-				this._Trips.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Trips(Trip entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = this;
-		}
-		
-		private void detach_Trips(Trip entity)
-		{
-			this.SendPropertyChanging();
-			entity.Route = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary")]
 	public partial class Salary : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3383,28 +3283,43 @@ namespace HUWATIExpress.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Station")]
-	public partial class Station : INotifyPropertyChanging, INotifyPropertyChanged
+    [Serializable]
+    [DataContract(IsReference = true)]
+    public partial class Station : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Station_Id;
-		
-		private string _Station_Name;
-		
-		private string _Region;
-		
-		private string _City;
-		
-		private string _Address;
-		
-		private bool _Status;
-		
-		private EntitySet<Bus_Stop> _Bus_Stops;
-		
-		private EntitySet<Bus_Stop> _Bus_Stops1;
-		
-		private EntitySet<Bus_Stop> _Bus_Stops2;
+	    [DataMember]private int _Station_Id;
+
+
+        [DataMember]
+        private string _Station_Name;
+
+
+        [DataMember]
+        private string _Region;
+
+
+        [DataMember]
+        private string _City;
+
+
+        [DataMember]
+        private string _Address;
+
+
+        [DataMember]
+        private bool _Status;
+
+        
+        private EntitySet<Bus_Stop> _Bus_Stops;
+
+        
+        private EntitySet<Bus_Stop> _Bus_Stops1;
+
+        
+        private EntitySet<Bus_Stop> _Bus_Stops2;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3978,13 +3893,14 @@ namespace HUWATIExpress.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Trip")]
-    [DataContract(IsReference = true)]
-    public partial class Trip : INotifyPropertyChanging, INotifyPropertyChanged
+    [DataContract (IsReference = true)]
+	public partial class Trip : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		[DataMember]private int _Trip_Id;
+
+        [DataMember]
+        private int _Trip_Id;
 
         [DataMember]
         private System.DateTime _Start_Time;
@@ -3996,9 +3912,10 @@ namespace HUWATIExpress.Models
         private int _Route_Id;
 
         [DataMember]
-        bool _Status;
+        private bool _Status;
 
-        [DataMember]
+        private EntitySet<Bus_Stop> _Bus_Stops;
+
         private EntityRef<Route> _Route;
 		
     #region Extensibility Method Definitions
@@ -4019,6 +3936,7 @@ namespace HUWATIExpress.Models
 		
 		public Trip()
 		{
+			this._Bus_Stops = new EntitySet<Bus_Stop>(new Action<Bus_Stop>(this.attach_Bus_Stops), new Action<Bus_Stop>(this.detach_Bus_Stops));
 			this._Route = default(EntityRef<Route>);
 			OnCreated();
 		}
@@ -4127,6 +4045,19 @@ namespace HUWATIExpress.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Trip_Bus_Stop", Storage="_Bus_Stops", ThisKey="Trip_Id", OtherKey="Trip_Id")]
+		public EntitySet<Bus_Stop> Bus_Stops
+		{
+			get
+			{
+				return this._Bus_Stops;
+			}
+			set
+			{
+				this._Bus_Stops.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Trip", Storage="_Route", ThisKey="Route_Id", OtherKey="Route_Id", IsForeignKey=true)]
 		public Route Route
 		{
@@ -4179,6 +4110,160 @@ namespace HUWATIExpress.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Bus_Stops(Bus_Stop entity)
+		{
+			this.SendPropertyChanging();
+			entity.Trip = this;
+		}
+		
+		private void detach_Bus_Stops(Bus_Stop entity)
+		{
+			this.SendPropertyChanging();
+			entity.Trip = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Route")]
+    [DataContract (IsReference = true)]
+	public partial class Route : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        [DataMember]
+        private int _Route_Id;
+
+        [DataMember]
+        private string _Description;
+
+        [DataMember]
+        private string _Photo;
+
+        private EntitySet<Trip> _Trips;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoute_IdChanging(int value);
+    partial void OnRoute_IdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnPhotoChanging(string value);
+    partial void OnPhotoChanged();
+    #endregion
+		
+		public Route()
+		{
+			this._Trips = new EntitySet<Trip>(new Action<Trip>(this.attach_Trips), new Action<Trip>(this.detach_Trips));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Route_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Route_Id
+		{
+			get
+			{
+				return this._Route_Id;
+			}
+			set
+			{
+				if ((this._Route_Id != value))
+				{
+					this.OnRoute_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Id = value;
+					this.SendPropertyChanged("Route_Id");
+					this.OnRoute_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Photo
+		{
+			get
+			{
+				return this._Photo;
+			}
+			set
+			{
+				if ((this._Photo != value))
+				{
+					this.OnPhotoChanging(value);
+					this.SendPropertyChanging();
+					this._Photo = value;
+					this.SendPropertyChanged("Photo");
+					this.OnPhotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Route_Trip", Storage="_Trips", ThisKey="Route_Id", OtherKey="Route_Id")]
+		public EntitySet<Trip> Trips
+		{
+			get
+			{
+				return this._Trips;
+			}
+			set
+			{
+				this._Trips.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Trips(Trip entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = this;
+		}
+		
+		private void detach_Trips(Trip entity)
+		{
+			this.SendPropertyChanging();
+			entity.Route = null;
 		}
 	}
 }
