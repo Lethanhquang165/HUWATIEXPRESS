@@ -1,5 +1,4 @@
 ﻿using HUWATIExpress.Models;
-using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -10,7 +9,7 @@ namespace HUWATIExpress.Controllers
     [DataContract(IsReference = true)]
     public class RouteController : ApiController
     {
-        huwadbDataContext db = new huwadbDataContext { ObjectTrackingEnabled = true };
+        huwadbDataContext db = new huwadbDataContext();
         [HttpGet]
         public IEnumerable<Route> GetRoutesList()
         {

@@ -1,248 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.375, 21.375" name="huwadb">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="huwadb">
   <DataContextMoniker Name="/huwadbDataContext" />
   <nestedChildShapes>
-    <classShape Id="4c42f846-20c4-44d1-bb8b-52db9bbe0bf1" absoluteBounds="0.75, 6.25, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/huwadbDataContext/Account" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ba6d62ab-a0b1-4345-a0f9-4baa4afec2d6" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e72325d5-64ba-4c55-95fb-f4737fdd7b2b" absoluteBounds="3.5, 2.75, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/huwadbDataContext/Admin" />
-      <nestedChildShapes>
-        <elementListCompartment Id="530ea72b-b5e1-48ab-bc7c-303f2fd19a93" absoluteBounds="3.515, 3.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" absoluteBounds="6.25, 9.75, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/huwadbDataContext/Bus" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cc01bfe8-5418-4ab8-bd29-84852dcdf38e" absoluteBounds="6.265, 10.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="45fd0e89-875c-4d2e-b581-3c638cefc642" absoluteBounds="9.5, 9, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/huwadbDataContext/Bus_Stop" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f107e419-2926-4a25-be1b-d372de61f5c9" absoluteBounds="9.515, 9.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="917ebde4-1227-4656-9eb2-d7396d04a67a" absoluteBounds="3.5, 0.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/huwadbDataContext/Bus_Type" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e01222b3-9ee9-4f38-9912-d96a7d46dadc" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="55f047c5-8819-41e9-9979-d6ffd4d40f46" absoluteBounds="3.5, 18.75, 2, 2.3478011067708309">
-      <DataClassMoniker Name="/huwadbDataContext/Company" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3d4ac6d9-cf9a-419a-bdd4-7c68f89b80da" absoluteBounds="3.515, 19.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0f216671-fcbc-47e2-8d54-07ab5c018f33" absoluteBounds="3.5, 5.875, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/huwadbDataContext/Customer" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9f81b780-4dd2-491c-99aa-1f1462e11fdc" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6f1a6af8-7829-4e25-853e-eb188188998d" absoluteBounds="3.5, 9.5, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/huwadbDataContext/Driver" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e598a99a-cc12-4485-a634-de6023531c3a" absoluteBounds="3.515, 9.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7b1ac667-42c3-4030-a59c-3427a2be3690" absoluteBounds="0.75, 2.25, 2, 1.193992513020834">
-      <DataClassMoniker Name="/huwadbDataContext/Role" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f59050be-1783-4d5a-a011-ba5fbdcab989" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="95ee6dc4-5643-4f7b-b8e4-b6e7989ff0a8" absoluteBounds="0.75, 9.125, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/huwadbDataContext/Salary" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f24ad5ac-dbef-4e7c-97bc-759ee7a15646" absoluteBounds="0.765, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="912c97e6-a424-4e0a-8600-591cfa73b1d9" absoluteBounds="3.5, 13.375, 2, 1.3862939453124987">
-      <DataClassMoniker Name="/huwadbDataContext/Seat" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c4cb8b21-eebe-4725-b30c-1b3a303c6f4e" absoluteBounds="3.515, 13.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9fca939d-62de-4e1f-a57d-66971801653f" absoluteBounds="0.75, 13.5, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/huwadbDataContext/Seat_Type" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2d0bed97-ce9a-4aa3-ad78-bbdd27396a2c" absoluteBounds="0.765, 13.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="92f34f54-0ecb-4dfe-baed-eccd4b2e766b" absoluteBounds="6.75, 2.25, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/huwadbDataContext/Station" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5b46ef4d-2aff-4741-aace-1b96645fb710" absoluteBounds="6.765, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fa0e9ec5-027a-430a-ba92-291d404cb70f" absoluteBounds="6.25, 5.875, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/huwadbDataContext/Ticket" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d2331924-dd5c-4a50-9940-9cdd09eecd80" absoluteBounds="6.265, 6.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.75 : 6.25); (3.125 : 5.875); (3.125 : 3.92390055338542); (3.5 : 3.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Account/Account_Admin" />
-      <nodes>
-        <classShapeMoniker Id="4c42f846-20c4-44d1-bb8b-52db9bbe0bf1" />
-        <classShapeMoniker Id="e72325d5-64ba-4c55-95fb-f4737fdd7b2b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.94307305724159); (5.875 : 2.31807305724159); (5.875 : 10.9239005533854); (5.97916666666667 : 10.9239005533854 : JumpStart); (6.14583333333333 : 10.9239005533854 : JumpEnd); (6.25 : 10.9239005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Bus_Type/Bus_Type_Bus" />
-      <nodes>
-        <classShapeMoniker Id="917ebde4-1227-4656-9eb2-d7396d04a67a" />
-        <classShapeMoniker Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 19.9239005533854); (7.25 : 19.9239005533854); (7.25 : 12.0978011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Company/Company_Bus" />
-      <nodes>
-        <classShapeMoniker Id="55f047c5-8819-41e9-9979-d6ffd4d40f46" />
-        <classShapeMoniker Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.97439947265625); (3.10416666666667 : 6.97439947265625 : JumpStart); (3.36458333333333 : 6.97439947265625 : JumpEnd); (3.5 : 6.97439947265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Account/Account_Customer" />
-      <nodes>
-        <classShapeMoniker Id="4c42f846-20c4-44d1-bb8b-52db9bbe0bf1" />
-        <classShapeMoniker Id="0f216671-fcbc-47e2-8d54-07ab5c018f33" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.2744502766927); (5.97916666666667 : 10.2744502766927 : JumpStart); (6.14583333333333 : 10.2744502766927 : JumpEnd); (6.25 : 10.2744502766927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Driver/Driver_Bus" />
-      <nodes>
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-        <classShapeMoniker Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.5733508300781); (5.97916666666667 : 11.5733508300781 : JumpStart); (6.14583333333333 : 11.5733508300781 : JumpEnd); (6.25 : 11.5733508300781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Driver/Driver_Bus1" />
-      <nodes>
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-        <classShapeMoniker Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.6362939453125); (3.125 : 8.0112939453125); (3.125 : 10.8662019856771); (3.5 : 10.8662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Account/Account_Driver" />
-      <nodes>
-        <classShapeMoniker Id="4c42f846-20c4-44d1-bb8b-52db9bbe0bf1" />
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.5 : 18.75); (3.125 : 18.375); (3.125 : 12.6089414328926); (3.50153746153846 : 12.2324039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Company/Company_Driver" />
-      <nodes>
-        <classShapeMoniker Id="55f047c5-8819-41e9-9979-d6ffd4d40f46" />
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.09699625651042); (3.5 : 3.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Role/Role_Admin" />
-      <nodes>
-        <classShapeMoniker Id="7b1ac667-42c3-4030-a59c-3427a2be3690" />
-        <classShapeMoniker Id="e72325d5-64ba-4c55-95fb-f4737fdd7b2b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.41276401652644); (3.28125 : 3.94401401652644); (3.28125 : 10.1518489928385); (3.5 : 10.1518489928385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Role/Role_Driver" />
-      <nodes>
-        <classShapeMoniker Id="7b1ac667-42c3-4030-a59c-3427a2be3690" />
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.1868490375601); (3.1875 : 8.7493490375601); (3.1875 : 4.54210283007813); (3.5 : 4.54210283007813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Salary/Salary_Admin" />
-      <nodes>
-        <classShapeMoniker Id="95ee6dc4-5643-4f7b-b8e4-b6e7989ff0a8" />
-        <classShapeMoniker Id="e72325d5-64ba-4c55-95fb-f4737fdd7b2b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.76342449641927); (3.5 : 9.76342449641927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Salary/Salary_Driver" />
-      <nodes>
-        <classShapeMoniker Id="95ee6dc4-5643-4f7b-b8e4-b6e7989ff0a8" />
-        <classShapeMoniker Id="6f1a6af8-7829-4e25-853e-eb188188998d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 14.0969962565104); (3.04166666666667 : 14.0969962565104 : JumpStart); (3.20833333333333 : 14.0969962565104 : JumpEnd); (3.5 : 14.0969962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Seat_Type/Seat_Type_Seat" />
-      <nodes>
-        <classShapeMoniker Id="9fca939d-62de-4e1f-a57d-66971801653f" />
-        <classShapeMoniker Id="912c97e6-a424-4e0a-8600-591cfa73b1d9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.53125 : 4.2131982421875); (8.53125 : 9.34375); (9.5 : 9.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Station/Station_Bus_Stop" />
-      <nodes>
-        <classShapeMoniker Id="92f34f54-0ecb-4dfe-baed-eccd4b2e766b" />
-        <classShapeMoniker Id="45fd0e89-875c-4d2e-b581-3c638cefc642" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.6718775 : 4.2131982421875); (8.6718775 : 9.1406225); (9.5 : 9.1406225)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Station/Station_Bus_Stop1" />
-      <nodes>
-        <classShapeMoniker Id="92f34f54-0ecb-4dfe-baed-eccd4b2e766b" />
-        <classShapeMoniker Id="45fd0e89-875c-4d2e-b581-3c638cefc642" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.3906225 : 4.2131982421875); (8.3906225 : 9.5468775); (9.5 : 9.5468775)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Station/Station_Bus_Stop2" />
-      <nodes>
-        <classShapeMoniker Id="92f34f54-0ecb-4dfe-baed-eccd4b2e766b" />
-        <classShapeMoniker Id="45fd0e89-875c-4d2e-b581-3c638cefc642" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 9.75); (7.25 : 8.03049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Bus/Bus_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="a9c4ccdf-7e64-4784-9b25-4a48d3dc0f7d" />
-        <classShapeMoniker Id="fa0e9ec5-027a-430a-ba92-291d404cb70f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.95274983723958); (6.25 : 6.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Customer/Customer_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="0f216671-fcbc-47e2-8d54-07ab5c018f33" />
-        <classShapeMoniker Id="fa0e9ec5-027a-430a-ba92-291d404cb70f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 13.4368490375601); (6.0625 : 12.8743490375601); (6.0625 : 7.52287675585938); (6.25 : 7.52287675585938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/huwadbDataContext/Seat/Seat_Ticket" />
-      <nodes>
-        <classShapeMoniker Id="912c97e6-a424-4e0a-8600-591cfa73b1d9" />
-        <classShapeMoniker Id="fa0e9ec5-027a-430a-ba92-291d404cb70f" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="80f9c562-1802-4bb9-a030-62bffba307b6" absoluteBounds="12.125, 0.875, 2, 1.7708968098958329">
-      <DataClassMoniker Name="/huwadbDataContext/Trip" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8888c8bf-91c2-479c-9d63-bfe624c04ae4" absoluteBounds="12.14, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="d48224a6-3450-4384-a1f8-5ab78d2e5c95" absoluteBounds="9.375, 1.125, 2, 1.3862939453125003">
+    <classShape Id="364fb4cc-6881-431b-a470-09e2df53ebdd" absoluteBounds="3.5, 3.125, 2, 1.7708968098958327">
       <DataClassMoniker Name="/huwadbDataContext/Route" />
       <nestedChildShapes>
-        <elementListCompartment Id="0aa1b578-b86d-4b49-ae89-9eea99ec3b82" absoluteBounds="9.39, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="58391be1-a0cd-4bf3-b10d-d41a3178af77" absoluteBounds="3.515, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.375 : 1.81814697265625); (12.125 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/huwadbDataContext/Route/Route_Trip" />
+    <classShape Id="5a2338a7-63c5-4133-89a0-b533d4ba665c" absoluteBounds="3.5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/huwadbDataContext/Seat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a120a575-33b0-425c-a4ba-e8ff501c6752" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f93a08f-8e97-499a-86a5-0d9e9987eb2a" absoluteBounds="0.75, 2.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/huwadbDataContext/Seat_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9153471d-b970-470d-82fb-8633ae8bc4ff" absoluteBounds="0.765, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2b1533a-ddf2-4ea0-8dc2-acc170bef32c" absoluteBounds="6.25, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/huwadbDataContext/Trip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bdce69f-3d35-447d-908f-cf097d793ecf" absoluteBounds="6.265, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/huwadbDataContext/Seat_Type/Seat_Type_Route" />
       <nodes>
-        <classShapeMoniker Id="d48224a6-3450-4384-a1f8-5ab78d2e5c95" />
-        <classShapeMoniker Id="80f9c562-1802-4bb9-a030-62bffba307b6" />
+        <classShapeMoniker Id="7f93a08f-8e97-499a-86a5-0d9e9987eb2a" />
+        <classShapeMoniker Id="364fb4cc-6881-431b-a470-09e2df53ebdd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.125 : 2.64589680989583); (13.125 : 9.78929768880208); (11.5 : 9.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/huwadbDataContext/Trip/Trip_Bus_Stop" />
+    <associationConnector edgePoints="[(1.75 : 2.375); (1.75 : 1.6874995); (3.5 : 1.6874995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/huwadbDataContext/Seat_Type/Seat_Type_Seat" />
       <nodes>
-        <classShapeMoniker Id="80f9c562-1802-4bb9-a030-62bffba307b6" />
-        <classShapeMoniker Id="45fd0e89-875c-4d2e-b581-3c638cefc642" />
+        <classShapeMoniker Id="7f93a08f-8e97-499a-86a5-0d9e9987eb2a" />
+        <classShapeMoniker Id="5a2338a7-63c5-4133-89a0-b533d4ba665c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.03929768880208); (6.25 : 4.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/huwadbDataContext/Route/Route_Trip" />
+      <nodes>
+        <classShapeMoniker Id="364fb4cc-6881-431b-a470-09e2df53ebdd" />
+        <classShapeMoniker Id="e2b1533a-ddf2-4ea0-8dc2-acc170bef32c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

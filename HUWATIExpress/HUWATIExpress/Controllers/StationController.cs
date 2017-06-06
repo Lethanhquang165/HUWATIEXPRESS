@@ -1,6 +1,4 @@
 ﻿using HUWATIExpress.Models;
-using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 
@@ -11,15 +9,38 @@ namespace HUWATIExpress.Controllers
         huwadbDataContext db = new huwadbDataContext();
 
         [HttpGet]
-        public IQueryable<Station> GetStationsList()
+        public IQueryable<Stations> GetStationsList()
         {
-            return db.Stations;
+            var data = from r in db.Routes
+                       join t in db.Trips on r.Route_Id equals t.Route_Id
+                       join st in db.Seat_Types on r.Seat_Type_Id equals st.Seat_Type_Id
+                       select new Stations
+                       {
+                           Start_Point = r.Start_Point,
+                           Def_Point = r.Def_Point,
+                           Start_Time = t.Start_Time,
+                           Type = st.Type,
+                           Status = t.Status
+                       };
+            return data;
         }
 
         [HttpGet]
-        public Station GetStationById(int id)
+        public Stations GetStationById(int id)
         {
-            return db.Stations.Where(t => t.Station_Id == id).SingleOrDefault();
+            var data = from r in db.Routes
+                       join t in db.Trips on r.Route_Id equals t.Route_Id
+                       join st in db.Seat_Types on r.Seat_Type_Id equals st.Seat_Type_Id
+                       where r.Route_Id == id
+                       select new Stations
+                       {
+                           Start_Point = r.Start_Point,
+                           Def_Point = r.Def_Point,
+                           Start_Time = t.Start_Time,
+                           Type = st.Type,
+                           Status = t.Status
+                       };
+            return data.FirstOrDefault();
         }
     }
 }

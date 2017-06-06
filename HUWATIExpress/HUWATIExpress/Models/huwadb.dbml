@@ -1,128 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HUWA" Class="huwadbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-LEOANDRES\LEOANDRES;Initial Catalog=HUWA;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HUWAConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Account" Member="Accounts">
-    <Type Name="Account">
-      <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="User_Name" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Account_Admin" Member="Admins" ThisKey="Account_Id" OtherKey="Account_Id" Type="Admin" />
-      <Association Name="Account_Customer" Member="Customers" ThisKey="Account_Id" OtherKey="Account_Id" Type="Customer" />
-      <Association Name="Account_Driver" Member="Drivers" ThisKey="Account_Id" OtherKey="Account_Id" Type="Driver" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Admin" Member="Admins">
-    <Type Name="Admin">
-      <Column Name="Admin_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Admin_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="Sex" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Salary_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Account_Admin" Member="Account" ThisKey="Account_Id" OtherKey="Account_Id" Type="Account" IsForeignKey="true" />
-      <Association Name="Role_Admin" Member="Role" ThisKey="Role_Id" OtherKey="Role_Id" Type="Role" IsForeignKey="true" />
-      <Association Name="Salary_Admin" Member="Salary" ThisKey="Salary_Id" OtherKey="Salary_Id" Type="Salary" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Bus" Member="Bus">
-    <Type Name="Bus">
-      <Column Name="Bus_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Main_Driver_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sub_Driver_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Phone" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Total_Seat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Bus_Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_Ticket" Member="Tickets" ThisKey="Bus_Id" OtherKey="Bus_Id" Type="Ticket" />
-      <Association Name="Bus_Type_Bus" Member="Bus_Type" ThisKey="Bus_Type_Id" OtherKey="Bus_Type_Id" Type="Bus_Type" IsForeignKey="true" />
-      <Association Name="Company_Bus" Member="Company" ThisKey="Company_Id" OtherKey="Company_Id" Type="Company" IsForeignKey="true" />
-      <Association Name="Driver_Bus" Member="Driver" ThisKey="Main_Driver_Id" OtherKey="Driver_Id" Type="Driver" IsForeignKey="true" />
-      <Association Name="Driver_Bus1" Member="Driver1" ThisKey="Sub_Driver_Id" OtherKey="Driver_Id" Type="Driver" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Bus_Stop" Member="Bus_Stops">
-    <Type Name="Bus_Stop">
-      <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Start_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Def_Station_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Bus_Stop_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Station_Bus_Stop" Member="Station" ThisKey="Start_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Station_Bus_Stop1" Member="Station1" ThisKey="Def_Station_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Station_Bus_Stop2" Member="Station2" ThisKey="Bus_Stop_Id" OtherKey="Station_Id" Type="Station" IsForeignKey="true" />
-      <Association Name="Trip_Bus_Stop" Member="Trip" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Trip" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Bus_Type" Member="Bus_Types">
-    <Type Name="Bus_Type">
-      <Column Name="Bus_Type_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Bus_Type_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_Type_Bus" Member="Bus" ThisKey="Bus_Type_Id" OtherKey="Bus_Type_Id" Type="Bus" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Company" Member="Companies">
-    <Type Name="Company">
-      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Fax" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Region" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Contracted_Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Company_Bus" Member="Bus" ThisKey="Company_Id" OtherKey="Company_Id" Type="Bus" />
-      <Association Name="Company_Driver" Member="Drivers" ThisKey="Company_Id" OtherKey="Company_Id" Type="Driver" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Customer" Member="Customers">
-    <Type Name="Customer">
-      <Column Name="Customer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Customer_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Identication_Number" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
-      <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Customer_Ticket" Member="Tickets" ThisKey="Customer_Id" OtherKey="Customer_Id" Type="Ticket" />
-      <Association Name="Account_Customer" Member="Account" ThisKey="Account_Id" OtherKey="Account_Id" Type="Account" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Driver" Member="Drivers">
-    <Type Name="Driver">
-      <Column Name="Driver_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Driver_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Sex" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Account_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Salary_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Driver_Bus" Member="Bus" ThisKey="Driver_Id" OtherKey="Main_Driver_Id" Type="Bus" />
-      <Association Name="Driver_Bus1" Member="Bus1" ThisKey="Driver_Id" OtherKey="Sub_Driver_Id" Type="Bus" />
-      <Association Name="Account_Driver" Member="Account" ThisKey="Account_Id" OtherKey="Account_Id" Type="Account" IsForeignKey="true" />
-      <Association Name="Company_Driver" Member="Company" ThisKey="Company_Id" OtherKey="Company_Id" Type="Company" IsForeignKey="true" />
-      <Association Name="Role_Driver" Member="Role" ThisKey="Role_Id" OtherKey="Role_Id" Type="Role" IsForeignKey="true" />
-      <Association Name="Salary_Driver" Member="Salary" ThisKey="Salary_Id" OtherKey="Salary_Id" Type="Salary" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Role" Member="Roles">
-    <Type Name="Role">
-      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Role_Name" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Role_Admin" Member="Admins" ThisKey="Role_Id" OtherKey="Role_Id" Type="Admin" />
-      <Association Name="Role_Driver" Member="Drivers" ThisKey="Role_Id" OtherKey="Role_Id" Type="Driver" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Salary" Member="Salaries">
-    <Type Name="Salary">
-      <Column Name="Salary_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Salary_Wave" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Total" Type="System.Decimal" DbType="Decimal(12,0) NOT NULL" CanBeNull="false" />
-      <Association Name="Salary_Admin" Member="Admins" ThisKey="Salary_Id" OtherKey="Salary_Id" Type="Admin" />
-      <Association Name="Salary_Driver" Member="Drivers" ThisKey="Salary_Id" OtherKey="Salary_Id" Type="Driver" />
+  <Table Name="dbo.Route" Member="Routes">
+    <Type Name="Route">
+      <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Start_Point" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Def_Point" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Trips_Per_Day" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Seat_Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Route_Trip" Member="Trips" ThisKey="Route_Id" OtherKey="Route_Id" Type="Trip" />
+      <Association Name="Seat_Type_Route" Member="Seat_Type" ThisKey="Seat_Type_Id" OtherKey="Seat_Type_Id" Type="Seat_Type" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Seat" Member="Seats">
@@ -130,7 +16,6 @@
       <Column Name="Seat_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Seat_Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Association Name="Seat_Ticket" Member="Tickets" ThisKey="Seat_Id" OtherKey="Seat_Id" Type="Ticket" />
       <Association Name="Seat_Type_Seat" Member="Seat_Type" ThisKey="Seat_Type_Id" OtherKey="Seat_Type_Id" Type="Seat_Type" IsForeignKey="true" />
     </Type>
   </Table>
@@ -138,53 +23,17 @@
     <Type Name="Seat_Type">
       <Column Name="Seat_Type_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Type" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Seat_Type_Route" Member="Routes" ThisKey="Seat_Type_Id" OtherKey="Seat_Type_Id" Type="Route" />
       <Association Name="Seat_Type_Seat" Member="Seats" ThisKey="Seat_Type_Id" OtherKey="Seat_Type_Id" Type="Seat" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Station" Member="Stations">
-    <Type Name="Station">
-      <Column Name="Station_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Station_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Region" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Station_Bus_Stop" Member="Bus_Stops" ThisKey="Station_Id" OtherKey="Start_Station_Id" Type="Bus_Stop" />
-      <Association Name="Station_Bus_Stop1" Member="Bus_Stops1" ThisKey="Station_Id" OtherKey="Def_Station_Id" Type="Bus_Stop" />
-      <Association Name="Station_Bus_Stop2" Member="Bus_Stops2" ThisKey="Station_Id" OtherKey="Bus_Stop_Id" Type="Bus_Stop" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Ticket" Member="Tickets">
-    <Type Name="Ticket">
-      <Column Name="Ticket_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Bus_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Seat_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Customer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Unit_Price" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL" CanBeNull="false" />
-      <Association Name="Bus_Ticket" Member="Bus" ThisKey="Bus_Id" OtherKey="Bus_Id" Type="Bus" IsForeignKey="true" />
-      <Association Name="Customer_Ticket" Member="Customer" ThisKey="Customer_Id" OtherKey="Customer_Id" Type="Customer" IsForeignKey="true" />
-      <Association Name="Seat_Ticket" Member="Seat" ThisKey="Seat_Id" OtherKey="Seat_Id" Type="Seat" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Trip" Member="Trips">
     <Type Name="Trip">
       <Column Name="Trip_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Start_Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="End_Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Trip_Bus_Stop" Member="Bus_Stops" ThisKey="Trip_Id" OtherKey="Trip_Id" Type="Bus_Stop" />
       <Association Name="Route_Trip" Member="Route" ThisKey="Route_Id" OtherKey="Route_Id" Type="Route" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Route" Member="Routes">
-    <Type Name="Route">
-      <Column Name="Route_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Photo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="Route_Trip" Member="Trips" ThisKey="Route_Id" OtherKey="Route_Id" Type="Trip" />
     </Type>
   </Table>
 </Database>
