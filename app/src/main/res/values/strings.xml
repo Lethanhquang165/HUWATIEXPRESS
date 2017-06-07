@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">HUWATIEXPRESSApplication</string>
 
+    <string name="search">Search</string>
+
     <!--Facebook Google-->
     <string name="facebook_app_id">268472840291683</string>
     <string name="fb_login_protocol_scheme">fb268472840291683</string>
@@ -15,8 +17,6 @@
     <string name="btn_create_an_account">Create an account?</string>
     <string name="btn_already_have_an_account">Already have an account?</string>
     <!--End Login & Register Activity-->
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--Start Menu Label-->
     <string name="menu_ticket">Ticket</string>
@@ -83,5 +83,12 @@
     <string name="booking_information_cartype">Loại xe</string>
     <string name="booking_information_licenseplates">Biển số xe</string>
     <!--End Booking Information-->
+
+    <!--Start Check Ticket-->
+    <string name="check_ticket_email_or_phone">Email or Phone</string>
+    <string name="check_ticket_code_ticket">Code ticket</string>
+    <string name="check_ticket_search_ticket">Search Ticket</string>
+    <!--Stop Check Ticket-->
 </resources>
+
 

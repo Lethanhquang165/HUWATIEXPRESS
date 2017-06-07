@@ -1,0 +1,95 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".View.Fragment.CheckTicketFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/bg_panel_ticket"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441">
+
+        <!--Title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_panel_search_ticket">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:drawableLeft="@drawable/ic_search_white"
+                android:drawablePadding="@dimen/inputText_drawable_padding"
+                android:paddingBottom="@dimen/txt_padding_bottom"
+                android:paddingTop="@dimen/txt_padding_top"
+                android:text="@string/check_ticket_search_ticket"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:paddingBottom="@dimen/textView_paddingBottom"
+            android:paddingTop="@dimen/textView_paddingTop"
+            android:text="@string/check_ticket_code_ticket"
+            android:textSize="@dimen/txt_size_text_subItem" />
+
+        <EditText
+            android:id="@+id/edtCodeTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:paddingBottom="@dimen/textView_paddingBottom"
+            android:paddingTop="@dimen/textView_paddingTop"
+            android:text="@string/check_ticket_email_or_phone"
+            android:textSize="@dimen/txt_size_text_subItem" />
+
+        <EditText
+            android:id="@+id/edtEmailOrPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/btn_margin"
+            android:background="@drawable/bg_button_search_ticket"
+            android:drawableLeft="@drawable/ic_search_white"
+            android:inputType="text"
+            android:padding="@dimen/inputText_drawable_padding"
+            android:text="@string/search"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -39,7 +39,6 @@
         </activity>
         <!-- End Activity Facebook -->
 
-
         <!-- Meta data of Facebook -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -67,7 +66,11 @@
         <activity android:name=".View.Activity.CustomerInformationActivity" />
         <activity android:name=".View.Activity.BookingInformationActivity" />
         tools:replace="android:icon"
+
         <activity android:name=".View.Activity.ChooseSeatsActivity"></activity>
+
+        <activity android:name=".View.Activity.CheckTicketsListActivity"></activity>
+
     </application>
 
 </manifest>

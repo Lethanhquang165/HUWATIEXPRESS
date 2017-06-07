@@ -8,11 +8,12 @@ import android.view.ViewGroup;
 
 import vn.edu.hutech.lvtien.huwatiexpressapplication.R;
 
-public class BusInformationFragment extends Fragment {
+public class CheckTicketFragment extends Fragment {
 
-    public BusInformationFragment() {
+    public CheckTicketFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class BusInformationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bus_information, container, false);
+        return inflater.inflate(R.layout.fragment_check_ticket, container, false);
     }
 
 
@@ -31,5 +32,6 @@ public class BusInformationFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
 
 }
