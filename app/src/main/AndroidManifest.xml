@@ -50,27 +50,28 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- End Register Activity -->
 
-
         <!-- Start Main Activity -->
         <activity
             android:name=".View.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <!-- End Main Activity -->
+        <activity android:name=".View.ListTrips.TripsActivity" />
+        <activity android:name=".View.Activity.CustomerInformationActivity" />
+        <activity android:name=".View.Activity.BookingInformationActivity" />
+        <activity android:name=".View.Activity.ChooseSeatsActivity" />
+        <activity android:name=".View.Activity.CheckTicketsListActivity" />
+
+        <activity android:name=".View.SplashScreen.SplashScreenActivity"
+                  android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- End Main Activity -->
-        <activity android:name=".View.Activity.TripsActivity" />
-        <activity android:name=".View.Activity.CustomerInformationActivity" />
-        <activity android:name=".View.Activity.BookingInformationActivity" />
         tools:replace="android:icon"
-
-        <activity android:name=".View.Activity.ChooseSeatsActivity"></activity>
-
-        <activity android:name=".View.Activity.CheckTicketsListActivity"></activity>
-
     </application>
 
 </manifest>

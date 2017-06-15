@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.Fragment.TicketFragment">
+    tools:context="vn.edu.hutech.lvtien.huwatiexpressapplication.View.SearchTrip.TicketFragment">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -43,9 +43,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/layout_marginLeft"
-            android:layout_marginRight="@dimen/layout_marginRight">
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:layout_marginTop="8dp">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtStartPoint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ticket_start_point"
@@ -59,6 +61,7 @@
             android:layout_marginRight="@dimen/layout_marginRight">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtStopPoint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/ticket_stop_point"
@@ -105,7 +108,7 @@
                 app:sc_corner_radius="@dimen/segmented_corner_radius">
 
                 <RadioButton
-                    android:id="@+id/btnOneWay"
+                    android:id="@+id/btnSingle"
                     style="@style/RadioButton"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -115,7 +118,7 @@
                     android:textSize="18sp" />
 
                 <RadioButton
-                    android:id="@+id/btnRoundTrip"
+                    android:id="@+id/btnReturn"
                     style="@style/RadioButton"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

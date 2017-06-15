@@ -1,4 +1,4 @@
-package vn.edu.hutech.lvtien.huwatiexpressapplication.View.Login;
+package vn.edu.hutech.lvtien.huwatiexpressapplication.View.ListTrips;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,20 +6,20 @@ import android.os.Bundle;
 import vn.edu.hutech.lvtien.huwatiexpressapplication.R;
 import vn.edu.hutech.lvtien.huwatiexpressapplication.View.Util.ActivityUtils;
 
-public class LoginActivity extends AppCompatActivity {
+public class TripsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_trips);
 
-        LoginFragment loginFragment = (LoginFragment)
+        TripsFragment tripsFragment = (TripsFragment)
                 getSupportFragmentManager().findFragmentById(R.id.contentFrame);
-        if(loginFragment == null){
-            loginFragment = LoginFragment.newInstance();
+        if(tripsFragment == null){
+            tripsFragment = TripsFragment.newInstance();
             ActivityUtils.addFragmentToActivity(
                     getSupportFragmentManager(),
-                    loginFragment,
+                    tripsFragment,
                     R.id.contentFrame
             );
         }
