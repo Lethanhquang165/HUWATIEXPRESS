@@ -24,7 +24,9 @@ namespace HUWATIExpress.Controllers.Mobile
                                 seat.Seat_Code,
                                 seat.Seat_Position,
                                 seat.Status,
-                                seat.Seat_Id
+                                seat.Seat_Id,
+                                bus.Row_Num,
+                                bus.Col_Num
                             };
 
             var subQuery2 = from trip in db.Trips
@@ -47,7 +49,9 @@ namespace HUWATIExpress.Controllers.Mobile
                                Seat_Code = listItem1.Seat_Code,
                                Seat_Position = listItem1.Seat_Position,
                                Available_Seat_Status = listItem1.Status,
-                               Sold_Seat_Status = leftjoin.Status ? null : (bool?)false
+                               Sold_Seat_Status = leftjoin.Status ? null : (bool?)false,
+                               Row_Num = listItem1.Row_Num,
+                               Col_Num = listItem1.Col_Num
                            };
 
             return listItem;

@@ -1,5 +1,6 @@
 ﻿using HUWATIExpress.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
@@ -15,28 +16,38 @@ namespace HUWATIExpress.Controllers.Mobile
         [HttpGet]
         public IQueryable<TripByPointsListItem> GetTripByPoints(string startPoint, string defPoint, DateTime startDate)
         {
-            var listItem = from company in db.Companies
+            var emptyseatno = (from company in db.Companies
 
-                           join bus in db.Bus on company.Company_Id equals bus.Company_Id
-                           join bustype in db.Bus_Types on bus.Bus_Type_Id equals bustype.Bus_Type_Id
-                           join seat in db.Seats on bus.Bus_Id equals seat.Bus_Id
-                           join trip in db.Trips on bus.Bus_Id equals trip.Bus_Id
-                           join route in db.Routes on trip.Route_Id equals route.Route_Id
+                               join bus in db.Bus on company.Company_Id equals bus.Company_Id
+                               join bustype in db.Bus_Types on bus.Bus_Type_Id equals bustype.Bus_Type_Id
+                               join trip in db.Trips on bus.Bus_Id equals trip.Bus_Id
+                               join seat in db.Seats on bus.Bus_Id equals seat.Bus_Id
+                               join route in db.Routes on trip.Route_Id equals route.Route_Id
 
-                           where route.Start_Point == startPoint && route.Def_Point == defPoint && trip.Start_Date == startDate
+                               where route.Start_Point == startPoint && route.Def_Point == defPoint && trip.Start_Date == startDate && seat.Status == false
+                               select seat.Bus_Id).Count();
 
-                           select new TripByPointsListItem
-                           {
-                               CompanyName = company.Company_Name,
-                               Bus_Type_Name = bustype.Bus_Type_Name,
-                               Start_Point = route.Start_Point,
-                               Def_Point = route.Def_Point,
-                               Start_Date = trip.Start_Date,
-                               Start_Time = trip.Start_Time,
-                               Seat_Code = seat.Seat_Code,
-                               Seat_Position = seat.Seat_Position,
-                               Price = trip.Price
-                           };
+              var listItem =  from company in db.Companies
+
+                            join bus in db.Bus on company.Company_Id equals bus.Company_Id
+                            join bustype in db.Bus_Types on bus.Bus_Type_Id equals bustype.Bus_Type_Id
+                            join trip in db.Trips on bus.Bus_Id equals trip.Bus_Id
+                            join route in db.Routes on trip.Route_Id equals route.Route_Id
+                      
+                            where route.Start_Point == startPoint && route.Def_Point == defPoint && trip.Start_Date == startDate
+                            select new TripByPointsListItem
+                            {
+                                TripId = trip.Trip_Id,
+                                BusId = bus.Bus_Id,
+                                CompanyName = company.Company_Name,
+                                Bus_Type_Name = bustype.Bus_Type_Name,
+                                Start_Point = route.Start_Point,
+                                Def_Point = route.Def_Point,
+                                Start_Date = trip.Start_Date,
+                                Start_Time = trip.Start_Time,
+                                Price = trip.Price,
+                                Empty_Seat_Num = emptyseatno
+                            };
             return listItem;
         }
 
