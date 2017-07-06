@@ -30,9 +30,6 @@ namespace HUWATIExpress.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBus_Type(Bus_Type instance);
-    partial void UpdateBus_Type(Bus_Type instance);
-    partial void DeleteBus_Type(Bus_Type instance);
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
@@ -48,6 +45,9 @@ namespace HUWATIExpress.Models
     partial void InsertBus(Bus instance);
     partial void UpdateBus(Bus instance);
     partial void DeleteBus(Bus instance);
+    partial void InsertBus_Type(Bus_Type instance);
+    partial void UpdateBus_Type(Bus_Type instance);
+    partial void DeleteBus_Type(Bus_Type instance);
     partial void InsertCompany(Company instance);
     partial void UpdateCompany(Company instance);
     partial void DeleteCompany(Company instance);
@@ -110,14 +110,6 @@ namespace HUWATIExpress.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Bus_Type> Bus_Types
-		{
-			get
-			{
-				return this.GetTable<Bus_Type>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Account> Accounts
 		{
 			get
@@ -155,6 +147,14 @@ namespace HUWATIExpress.Models
 			get
 			{
 				return this.GetTable<Bus>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Bus_Type> Bus_Types
+		{
+			get
+			{
+				return this.GetTable<Bus_Type>();
 			}
 		}
 		
@@ -239,177 +239,14 @@ namespace HUWATIExpress.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bus_Type")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
     [DataContract]
-	public partial class Bus_Type : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		[DataMember]
-		private int _Bus_Type_Id;
-        [DataMember]
-        private string _Bus_Type_Name;
-        [DataMember]
-        private int _Total_Seat;
-        [DataMember]
-        private bool _Is_Seat;
-		
-		private EntitySet<Bus> _Bus;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnBus_Type_IdChanging(int value);
-    partial void OnBus_Type_IdChanged();
-    partial void OnBus_Type_NameChanging(string value);
-    partial void OnBus_Type_NameChanged();
-    partial void OnTotal_SeatChanging(int value);
-    partial void OnTotal_SeatChanged();
-    partial void OnIs_SeatChanging(bool value);
-    partial void OnIs_SeatChanged();
-    #endregion
-		
-		public Bus_Type()
-		{
-			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bus_Type_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Bus_Type_Id
-		{
-			get
-			{
-				return this._Bus_Type_Id;
-			}
-			set
-			{
-				if ((this._Bus_Type_Id != value))
-				{
-					this.OnBus_Type_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Bus_Type_Id = value;
-					this.SendPropertyChanged("Bus_Type_Id");
-					this.OnBus_Type_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bus_Type_Name", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
-		public string Bus_Type_Name
-		{
-			get
-			{
-				return this._Bus_Type_Name;
-			}
-			set
-			{
-				if ((this._Bus_Type_Name != value))
-				{
-					this.OnBus_Type_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Bus_Type_Name = value;
-					this.SendPropertyChanged("Bus_Type_Name");
-					this.OnBus_Type_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Seat", DbType="Int NOT NULL")]
-		public int Total_Seat
-		{
-			get
-			{
-				return this._Total_Seat;
-			}
-			set
-			{
-				if ((this._Total_Seat != value))
-				{
-					this.OnTotal_SeatChanging(value);
-					this.SendPropertyChanging();
-					this._Total_Seat = value;
-					this.SendPropertyChanged("Total_Seat");
-					this.OnTotal_SeatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Is_Seat", DbType="Bit NOT NULL")]
-		public bool Is_Seat
-		{
-			get
-			{
-				return this._Is_Seat;
-			}
-			set
-			{
-				if ((this._Is_Seat != value))
-				{
-					this.OnIs_SeatChanging(value);
-					this.SendPropertyChanging();
-					this._Is_Seat = value;
-					this.SendPropertyChanged("Is_Seat");
-					this.OnIs_SeatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Type_Bus", Storage="_Bus", ThisKey="Bus_Type_Id", OtherKey="Bus_Type_Id")]
-		public EntitySet<Bus> Bus
-		{
-			get
-			{
-				return this._Bus;
-			}
-			set
-			{
-				this._Bus.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus_Type = this;
-		}
-		
-		private void detach_Bus(Bus entity)
-		{
-			this.SendPropertyChanging();
-			entity.Bus_Type = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
-    [DataContract]
-    public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-        [DataMember]
-        private int _Account_Id;
+		private int _Account_Id;
         [DataMember]
         private string _User_Name;
         [DataMember]
@@ -1689,6 +1526,169 @@ namespace HUWATIExpress.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bus_Type")]
+    [DataContract]
+    public partial class Bus_Type : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        [DataMember]
+        private int _Bus_Type_Id;
+        [DataMember]
+        private string _Bus_Type_Name;
+        [DataMember]
+        private int _Total_Seat;
+        [DataMember]
+        private bool _Is_Seat;
+		
+		private EntitySet<Bus> _Bus;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBus_Type_IdChanging(int value);
+    partial void OnBus_Type_IdChanged();
+    partial void OnBus_Type_NameChanging(string value);
+    partial void OnBus_Type_NameChanged();
+    partial void OnTotal_SeatChanging(int value);
+    partial void OnTotal_SeatChanged();
+    partial void OnIs_SeatChanging(bool value);
+    partial void OnIs_SeatChanged();
+    #endregion
+		
+		public Bus_Type()
+		{
+			this._Bus = new EntitySet<Bus>(new Action<Bus>(this.attach_Bus), new Action<Bus>(this.detach_Bus));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bus_Type_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Bus_Type_Id
+		{
+			get
+			{
+				return this._Bus_Type_Id;
+			}
+			set
+			{
+				if ((this._Bus_Type_Id != value))
+				{
+					this.OnBus_Type_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Bus_Type_Id = value;
+					this.SendPropertyChanged("Bus_Type_Id");
+					this.OnBus_Type_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bus_Type_Name", DbType="NVarChar(60) NOT NULL", CanBeNull=false)]
+		public string Bus_Type_Name
+		{
+			get
+			{
+				return this._Bus_Type_Name;
+			}
+			set
+			{
+				if ((this._Bus_Type_Name != value))
+				{
+					this.OnBus_Type_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Bus_Type_Name = value;
+					this.SendPropertyChanged("Bus_Type_Name");
+					this.OnBus_Type_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total_Seat", DbType="Int NOT NULL")]
+		public int Total_Seat
+		{
+			get
+			{
+				return this._Total_Seat;
+			}
+			set
+			{
+				if ((this._Total_Seat != value))
+				{
+					this.OnTotal_SeatChanging(value);
+					this.SendPropertyChanging();
+					this._Total_Seat = value;
+					this.SendPropertyChanged("Total_Seat");
+					this.OnTotal_SeatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Is_Seat", DbType="Bit NOT NULL")]
+		public bool Is_Seat
+		{
+			get
+			{
+				return this._Is_Seat;
+			}
+			set
+			{
+				if ((this._Is_Seat != value))
+				{
+					this.OnIs_SeatChanging(value);
+					this.SendPropertyChanging();
+					this._Is_Seat = value;
+					this.SendPropertyChanged("Is_Seat");
+					this.OnIs_SeatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bus_Type_Bus", Storage="_Bus", ThisKey="Bus_Type_Id", OtherKey="Bus_Type_Id")]
+		public EntitySet<Bus> Bus
+		{
+			get
+			{
+				return this._Bus;
+			}
+			set
+			{
+				this._Bus.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus_Type = this;
+		}
+		
+		private void detach_Bus(Bus entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bus_Type = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Company")]
     [DataContract]
     public partial class Company : INotifyPropertyChanging, INotifyPropertyChanged
@@ -2015,8 +2015,6 @@ namespace HUWATIExpress.Models
         [DataMember]
         private System.Nullable<decimal> _Phone;
         [DataMember]
-        private bool _Status;
-        [DataMember]
         private System.Nullable<decimal> _Identication_Number;
         [DataMember]
         private int _Account_Id;
@@ -2037,8 +2035,6 @@ namespace HUWATIExpress.Models
     partial void OnAddressChanged();
     partial void OnPhoneChanging(System.Nullable<decimal> value);
     partial void OnPhoneChanged();
-    partial void OnStatusChanging(bool value);
-    partial void OnStatusChanged();
     partial void OnIdentication_NumberChanging(System.Nullable<decimal> value);
     partial void OnIdentication_NumberChanged();
     partial void OnAccount_IdChanging(int value);
@@ -2128,26 +2124,6 @@ namespace HUWATIExpress.Models
 					this._Phone = value;
 					this.SendPropertyChanged("Phone");
 					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
-		public bool Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
 				}
 			}
 		}
@@ -2694,7 +2670,7 @@ namespace HUWATIExpress.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Role_Id
 		{
 			get
@@ -2714,7 +2690,7 @@ namespace HUWATIExpress.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role_Name", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role_Name", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
 		public string Role_Name
 		{
 			get
@@ -3221,7 +3197,7 @@ namespace HUWATIExpress.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seat_Code", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seat_Code", DbType="VarChar(2)")]
 		public string Seat_Code
 		{
 			get

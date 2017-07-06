@@ -21,10 +21,11 @@ namespace HUWATIExpress.Controllers.Mobile
                                join bus in db.Bus on company.Company_Id equals bus.Company_Id
                                join bustype in db.Bus_Types on bus.Bus_Type_Id equals bustype.Bus_Type_Id
                                join trip in db.Trips on bus.Bus_Id equals trip.Bus_Id
+                               join seatmap in db.Seat_Maps on trip.Trip_Id equals seatmap.Trip_Id
                                join seat in db.Seats on bus.Bus_Id equals seat.Bus_Id
                                join route in db.Routes on trip.Route_Id equals route.Route_Id
 
-                               where route.Start_Point == startPoint && route.Def_Point == defPoint && trip.Start_Date == startDate && seat.Status == false
+                               where route.Start_Point == startPoint && route.Def_Point == defPoint && trip.Start_Date == startDate && seatmap.Status == false
                                select seat.Bus_Id).Count();
 
               var listItem =  from company in db.Companies

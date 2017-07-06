@@ -25,20 +25,18 @@ namespace HUWATIExpress.Controllers.Mobile
         /// <param name="name"></param>
         /// <param name="address"></param>
         /// <param name="phone"></param>
-        /// <param name="status"></param>
         /// <param name="idnum"></param>
         /// <param name="accid"></param>
         /// 
         [AcceptVerbs("GET")]
         [HttpPost]
-        public void AddNewCustomer(string name, string address, decimal phone, bool status, decimal idnum, int accid)
+        public void AddNewCustomer(string name, string address, decimal phone, decimal idnum, int accid)
         {
             var customer = new Customer
             {
                 Customer_Name = name,
                 Address = address,
                 Phone = phone,
-                Status = status,
                 Identication_Number = idnum,
                 Account_Id = accid,
             };
